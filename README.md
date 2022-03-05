@@ -1,7 +1,4 @@
 # csgo-ze-configs
-CSGO ZE maps configs
-
-CS:GO ZE configs
 
 If you find any bugs please contant me.
 
