@@ -1,7 +1,10 @@
 // Script by Luffaren (STEAM_0:1:22521282)
+marathon <- false;
 
 function CheckAutoSlay(stageind)
 {
+	if(marathon ==true)
+	{
 		local ctc_check = 0;
 		local tc_check = 0;
 		local p = null;
@@ -13,6 +16,7 @@ function CheckAutoSlay(stageind)
 				else if(p.GetTeam()==3)ctc_check++;
 			}
 		}
+	}
 		if(ctc_check>0&&tc_check>0)
 		{
 			local ccratio = ctc_check/tc_check;
@@ -29,6 +33,11 @@ function CheckAutoSlay(stageind)
 		EntFire("server", "Command", "say << Human alive : "+ctc_check.tostring()+"/"+(ctc_check+tc_check).tostring()+" >>", 0.00,null);
 		EntFire("server", "Command", "say << Human alive : "+ctc_check.tostring()+"/"+(ctc_check+tc_check).tostring()+" >>", 0.02,null);
 		EntFire("server", "Command", "say << Human alive : "+ctc_check.tostring()+"/"+(ctc_check+tc_check).tostring()+" >>", 0.04,null);
+		
+	if(marathon==false)
+	{
+		return;
+	}
 }
 
 function KillAllCT()
